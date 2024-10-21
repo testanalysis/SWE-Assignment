@@ -56,5 +56,5 @@ GET /applications: Retrieve all applications.
 8. Scheme Benefits:
 GET /scheme_benefits: Retrieve all scheme benefits.
 
-10. Scheme Criteria:
+9. Scheme Criteria:
 GET /scheme_criteria: Retrieve all scheme criteria.
