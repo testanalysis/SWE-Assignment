@@ -17,16 +17,19 @@ To run the Flask application using Docker, follow these steps:
 
 Clone this repository:
 git clone https://github.com/your-repo/flask-sqlite-docker-app.git
+
 cd flask-sqlite-docker-app
+
 Run Docker Compose: Docker Compose will build the image and run the application along with the necessary environment setup.
 bash
-
 docker-compose up
+
 This will start the application on http://localhost:5001.
+
 Stopping the containers: To stop the Docker containers, press Ctrl + C in the terminal or run:
 bash
-
 docker-compose down
+
 Available APIs
 
 Once the app is running, the following APIs will be available at http://localhost:5001/:
