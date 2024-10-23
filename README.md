@@ -7,20 +7,20 @@ This repository contains a Flask application that uses SQLite as the database an
 
 **Prerequisites**
 
-Before running the application, ensure that you have the following installed:
-
-Docker: You can download and install Docker from here: https://docs.docker.com/engine/install/
-
-Docker Compose: This should come pre-installed with Docker Desktop. If not, follow the Docker Compose installation instructions.
+   Before running the application, ensure that you have the following installed:
+   
+   Docker: You can download and install Docker from here: https://docs.docker.com/engine/install/
+   
+   Docker Compose: This should come pre-installed with Docker Desktop. If not, follow the Docker Compose installation       instructions.
 
 **How to Run the Application**
 
-To run the Flask application using Docker, follow these steps:
-
-Clone this repository:
-git clone https://github.com/testanalysis/SWE-Assignment.git
-
-cd SWE-Assignment-main
+   To run the Flask application using Docker, follow these steps:
+   
+   Clone this repository:
+   git clone https://github.com/testanalysis/SWE-Assignment.git
+   
+   cd SWE-Assignment-main
 
 ## Docker Setup Instructions
 
