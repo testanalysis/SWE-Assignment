@@ -39,6 +39,16 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
+@app.before_request
+def require_json():
+    # List the routes where you expect a JSON body
+    json_routes = ['/register', '/login', '/applicants', '/add_scheme', '/applications']
+    
+    # Only apply the check to routes that expect JSON data
+    if request.path in json_routes and request.method in ['POST', 'PUT', 'PATCH']:  # Apply to write methods
+        if not request.is_json:
+            return jsonify({'error': 'Unsupported Media Type. Content-Type should be application/json.'}), 415
+
 @app.route('/')
 def home():
     return "Welcome to Flask with SQLite!"
@@ -89,7 +99,8 @@ def login():
         return jsonify({'message': 'User not found. Please register.'}), 404
 
     if bcrypt.check_password_hash(user['password'], password):
-        access_token = create_access_token(identity=username)
+        access_token = create_access_token(identity={'username': username, 'role': 'admin'})
+
         return jsonify({
             'message': 'Login successful',
             'access_token': access_token
@@ -132,7 +143,6 @@ def get_applicants():
     if not applicants:
         return jsonify({"message": "No applicants found."}), 404
 
-    # Return the schemes as JSON if found
     return jsonify([dict(row) for row in applicants]), 200
 
 def validate_household_member(member):
@@ -250,6 +260,10 @@ def add_applicant():
 @app.route('/schemes', methods=['GET'])
 @jwt_required()
 def get_schemes():
+    current_user = get_jwt_identity()  # Get the user info from the JWT token
+    if current_user['role'] != 'admin':
+        return jsonify({"msg": "Unauthorized access, admin only"}), 403
+    
     conn = get_db_connection()
     schemes = conn.execute('SELECT * FROM schemes').fetchall()  
     conn.close()
@@ -491,6 +505,10 @@ def eligibility(applicant_id):
 @app.route('/schemes/eligible', methods=['GET'])
 @jwt_required()
 def get_specific_scheme():
+    current_user = get_jwt_identity()  # Get the user info from the JWT token
+    if current_user['role'] != 'admin':
+        return jsonify({"msg": "Unauthorized access, admin only"}), 403
+
     applicant_id = request.args.get('applicant')
 
     if not applicant_id:
@@ -557,6 +575,10 @@ def insert_application(application_data):
 @app.route('/applications', methods=['POST'])
 @jwt_required()
 def add_applications():
+    current_user = get_jwt_identity()  # Get the user info from the JWT token
+    if current_user['role'] != 'admin':
+        return jsonify({"msg": "Unauthorized access, admin only"}), 403
+
     conn = get_db_connection()
 
     data = request.json
