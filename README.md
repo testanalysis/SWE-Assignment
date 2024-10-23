@@ -53,17 +53,20 @@ POST /login: Authenticate a user and provide access tokens.
 
 2.Administrators:
 GET /administrators: Retrieve all administrators.
+
 POST /register: Create a new administrator.
+
 DELETE /administrators/{id}: Delete a specific scheme by its ID.
 
 3. Applicants:
 GET /applicants: Retrieve all applicants.
+
 POST /applicants: Create a new applicant.
 
-4. Household:
+5. Household:
 GET /household: Retrieve household information.
 
-5. Schemes:
+6. Schemes:
 GET /schemes: Retrieve all schemes.
 GET /schemes/eligible?applicant={id}: Get all schemes an applicant is eligible for.
 DELETE /delete_scheme/{id}: Delete a specific scheme by its ID.
