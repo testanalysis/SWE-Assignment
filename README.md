@@ -49,9 +49,11 @@ If Docker cannot access the project directory, you may need to configure Docker 
 Once the app is running, the following APIs will be available at http://localhost:5001/:
 
 1. Login:
+
 POST /login: Authenticate a user and provide access tokens.
 
-2.Administrators:
+2. Administrators:
+
 GET /administrators: Retrieve all administrators.
 
 POST /register: Create a new administrator.
@@ -59,27 +61,33 @@ POST /register: Create a new administrator.
 DELETE /administrators/{id}: Delete a specific scheme by its ID.
 
 3. Applicants:
+   
 GET /applicants: Retrieve all applicants.
 
 POST /applicants: Create a new applicant.
 
 5. Household:
+   
 GET /household: Retrieve household information.
 
-6. Schemes:
+7. Schemes:
+   
 GET /schemes: Retrieve all schemes.
+
 GET /schemes/eligible?applicant={id}: Get all schemes an applicant is eligible for.
+
 DELETE /delete_scheme/{id}: Delete a specific scheme by its ID.
+
 POST /add_scheme: Add a new scheme.
 
-7. Applications:
+9. Applications:
 GET /applications: Retrieve all applications.
 POST /applications: Create a new application.
 
-8. Scheme Benefits:
+10. Scheme Benefits:
 GET /scheme_benefits: Retrieve all scheme benefits.
 
-9. Scheme Criteria:
+11. Scheme Criteria:
 GET /scheme_criteria: Retrieve all scheme criteria.
 
 
