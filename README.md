@@ -23,7 +23,7 @@ This repository contains a Flask application that uses SQLite as the database an
    Clone this repository:
    git clone https://github.com/testanalysis/SWE-Assignment.git
    
-   cd SWE-Assignment-main
+   cd to SWE-Assignment-main
 
 ## Docker Setup Instructions
 
