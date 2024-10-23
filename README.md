@@ -76,6 +76,7 @@ json
   "username": "account1",
   "password": "1"
 }
+
 In response, you will receive an access_token. Copy this token for the next step.
 
 3. Authenticate with Bearer Token
