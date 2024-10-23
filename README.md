@@ -106,6 +106,7 @@ This README will guide you through the process of using the system API for regis
 
 A tool like Postman or curl to make HTTP requests.
 Base URL for API calls: http://localhost:5001/
+
 Steps
 
 1. Register a New User
