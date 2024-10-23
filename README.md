@@ -37,7 +37,10 @@ If Docker cannot access the project directory, you may need to configure Docker 
 3. Go to the **Resources** section and then select **File Sharing** (macOS) or **Shared Drives** (Windows).
 4. Add the path to your project directory:
    - macOS: Click the **`+` button** and select path to the git cloned folder. Click the **`+` button** so that the path is registered for file sharing. 
-   - Windows: Ensure the appropriate drive (e.g., `C:` or `D:`) is checked.
+   - Windows: Go to bottom right of Windows, right click docker.
+      - Select "Switch to linux containers" and "Switch"
+      - You should now see "File Sharing" Option. 
+      - Ensure the appropriate drive (e.g., `C:` or `D:`) is checked.
 5. Click **Apply & Restart**.
 6. Open a terminal, cd to SWE-Assignment-main. You should see app.py & dockerfile etc when you list the directory.
 7. Run "docker-compose up --build".
