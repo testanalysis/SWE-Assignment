@@ -42,7 +42,7 @@ If Docker cannot access the project directory, you may need to configure Docker 
 9. Stopping the containers: To stop the Docker containers, press Ctrl + C in the terminal or run:
 bash
 
-Available APIs
+## Available APIs
 
 Once the app is running, the following APIs will be available at http://localhost:5001/:
 
