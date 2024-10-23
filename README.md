@@ -34,8 +34,8 @@ If Docker cannot access the project directory, you may need to configure Docker 
 2. Navigate to **Preferences** (macOS) or **Settings** (Windows).
 3. Go to the **Resources** section and then select **File Sharing** (macOS) or **Shared Drives** (Windows).
 4. Add the path to your project directory:
-   - macOS: Click the **`+` button** and select path to the git cloned folder. Click the **`+` button** so that the path is registered for file sharing.
-   - Do also add these paths shown below
+   - macOS: Click the **`+` button** and enter the paths shown below. Click the **`+` button** so that the path is registered for file sharing.
+   - Do add these paths shown below
    - /Users
    - /Volumes
    - /tmp
