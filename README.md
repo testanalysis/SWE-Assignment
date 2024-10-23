@@ -66,11 +66,11 @@ GET /applicants: Retrieve all applicants.
 
 POST /applicants: Create a new applicant.
 
-5. Household:
+4. Household:
    
 GET /household: Retrieve household information.
 
-7. Schemes:
+5. Schemes:
    
 GET /schemes: Retrieve all schemes.
 
@@ -80,14 +80,20 @@ DELETE /delete_scheme/{id}: Delete a specific scheme by its ID.
 
 POST /add_scheme: Add a new scheme.
 
-9. Applications:
-GET /applications: Retrieve all applications.
-POST /applications: Create a new application.
-
-10. Scheme Benefits:
+6. Scheme Benefits:
+ 
 GET /scheme_benefits: Retrieve all scheme benefits.
 
-11. Scheme Criteria:
+7. Scheme Criteria:
+   
 GET /scheme_criteria: Retrieve all scheme criteria.
+
+8. Applications:
+
+GET /applications: Retrieve all applications.
+
+POST /applications: Create a new application.
+
+
 
 
