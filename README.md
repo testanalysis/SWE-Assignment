@@ -133,9 +133,11 @@ json
 }
 
 7. Check Eligibility for Schemes
+
 To check an applicant's eligibility for various schemes, use the applicant's id and send a GET request to:
 
 GET /schemes/eligible?applicant={id}
+
 Make sure to replace {id} with the actual applicant's ID.
 
 8. Additional APIs
