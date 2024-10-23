@@ -99,5 +99,104 @@ GET /applications: Retrieve all applications.
 POST /applications: Create a new application.
 
 
+System API Usage Guide
 
+This README will guide you through the process of using the system API for registering, logging in, and managing applicants, schemes, and applications. The steps include user registration, login, and making authenticated API calls.
+
+Prerequisites
+
+A tool like Postman or curl to make HTTP requests.
+Base URL for API calls: http://localhost:5001/
+Steps
+
+1. Register a New User
+First, register a new user account by sending a POST request to the /register endpoint with the following JSON body:
+
+json
+Copy code
+{
+  "username": "account1",
+  "password": "1"
+}
+2. Login to the System
+Next, log in using the same account credentials. Send a POST request to the /login endpoint with the following body:
+
+json
+Copy code
+{
+  "username": "account1",
+  "password": "1"
+}
+In response, you will receive an access_token. Copy this token for the next step.
+
+3. Authenticate with Bearer Token
+To authenticate future requests, include the access_token in the header of all API requests that require authorization:
+
+In Postman:
+Go to the Authorization tab.
+Select Bearer Token from the dropdown.
+Paste the access_token into the Token field.
+4. View All Schemes
+As a system administrator, you can view all schemes by sending a GET request to:
+
+bash
+Copy code
+GET /schemes
+Ensure the request contains the Bearer token from the previous step in the header.
+
+5. Add New Applicants
+Before creating an application, you need to save applicant data. Send a POST request to /applicants with an example JSON body like this:
+
+json
+Copy code
+{
+  "date_of_birth": "1984-10-06",
+  "employment_status": "unemployed",
+  "household": [
+    {
+      "date_of_birth": "2016-02-01",
+      "employment_status": "unemployed",
+      "name": "Gwen",
+      "relation": "daughter",
+      "sex": "female"
+    },
+    {
+      "date_of_birth": "2018-03-15",
+      "employment_status": "unemployed",
+      "name": "Jayden",
+      "relation": "son",
+      "sex": "male"
+    }
+  ],
+  "marital_status": "married",
+  "name": "Mary",
+  "sex": "female"
+}
+6. Create a New Application
+Once an applicant is registered, you can create a new application for them by sending a POST request to /applications with the following JSON body:
+
+json
+Copy code
+{
+  "name": "Mary",
+  "date_of_birth": "1984-10-06",
+  "scheme_applied": "Retrenchment Assistance Scheme (families)"
+}
+7. Check Eligibility for Schemes
+To check an applicant's eligibility for various schemes, use the applicant's id and send a GET request to:
+
+bash
+Copy code
+GET /schemes/eligible?applicant={id}
+Make sure to replace {id} with the actual applicant's ID.
+
+8. Additional APIs
+Administrators Management: Manage administrator accounts with the following endpoints:
+GET /administrators: View all administrators.
+DELETE /administrators/{id}: Delete an administrator by their ID.
+Scheme Management:
+POST /add_scheme: Add a new scheme.
+DELETE /delete_scheme/{id}: Delete a scheme by its ID.
+Applications Management:
+GET /applications: View all applications.
 
