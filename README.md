@@ -68,7 +68,7 @@ json
 }
 
 2. **Login to the System**
-3. 
+   
 Next, log in using the same account credentials. Send a POST request to the /login endpoint with the following body:
 
 json
