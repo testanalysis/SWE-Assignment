@@ -144,7 +144,7 @@ GET /schemes/eligible?applicant={id}
 
 Make sure to replace {id} with the actual applicant's ID.
 
-8.** Additional APIs**
+8.**Additional APIs**
 
 Administrators Management: Manage administrator accounts with the following endpoints:
 
