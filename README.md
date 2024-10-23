@@ -98,12 +98,11 @@ GET /applications: Retrieve all applications.
 
 POST /applications: Create a new application.
 
-
-System API Usage Guide
+## System API Usage Guide
 
 This README will guide you through the process of using the system API for registering, logging in, and managing applicants, schemes, and applications. The steps include user registration, login, and making authenticated API calls.
 
-Prerequisites
+**Prerequisites**
 
 A tool like Postman or curl to make HTTP requests.
 Base URL for API calls: http://localhost:5001/
@@ -113,16 +112,15 @@ Steps
 First, register a new user account by sending a POST request to the /register endpoint with the following JSON body:
 
 json
-Copy code
 {
   "username": "account1",
   "password": "1"
 }
+
 2. Login to the System
 Next, log in using the same account credentials. Send a POST request to the /login endpoint with the following body:
 
 json
-Copy code
 {
   "username": "account1",
   "password": "1"
@@ -136,11 +134,10 @@ In Postman:
 Go to the Authorization tab.
 Select Bearer Token from the dropdown.
 Paste the access_token into the Token field.
+
 4. View All Schemes
 As a system administrator, you can view all schemes by sending a GET request to:
 
-bash
-Copy code
 GET /schemes
 Ensure the request contains the Bearer token from the previous step in the header.
 
@@ -148,7 +145,6 @@ Ensure the request contains the Bearer token from the previous step in the heade
 Before creating an application, you need to save applicant data. Send a POST request to /applicants with an example JSON body like this:
 
 json
-Copy code
 {
   "date_of_birth": "1984-10-06",
   "employment_status": "unemployed",
@@ -172,21 +168,20 @@ Copy code
   "name": "Mary",
   "sex": "female"
 }
+
 6. Create a New Application
 Once an applicant is registered, you can create a new application for them by sending a POST request to /applications with the following JSON body:
 
 json
-Copy code
 {
   "name": "Mary",
   "date_of_birth": "1984-10-06",
   "scheme_applied": "Retrenchment Assistance Scheme (families)"
 }
+
 7. Check Eligibility for Schemes
 To check an applicant's eligibility for various schemes, use the applicant's id and send a GET request to:
 
-bash
-Copy code
 GET /schemes/eligible?applicant={id}
 Make sure to replace {id} with the actual applicant's ID.
 
