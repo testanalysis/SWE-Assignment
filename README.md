@@ -1,8 +1,6 @@
 # SWE-Assignment
 2024-08-13 Coding Assignment
 
-**Flask App with SQLite and Docker
-**
 This repository contains a Flask application that uses SQLite as the database and is containerized using Docker. The application provides an API for managing administrators, applicants, households, schemes, applications, and scheme-related information such as benefits and criteria.
 
 **Prerequisites**
