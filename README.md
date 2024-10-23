@@ -39,8 +39,7 @@ If Docker cannot access the project directory, you may need to configure Docker 
 6. Open a terminal, cd to the folder where the it has been git cloned.
 7. Run "docker-compose up --build".
 8. The Flask app should be listening on http://localhost:5001
-9. Stopping the containers: To stop the Docker containers, press Ctrl + C in the terminal or run:
-bash
+9. Stopping the containers: To stop the Docker containers, press Ctrl + C in the terminal
 
 ## Available APIs
 
