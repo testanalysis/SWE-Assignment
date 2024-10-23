@@ -59,7 +59,8 @@ Base URL for API calls: http://localhost:5001/
 
 Steps
 
-1. Register a New User
+1. **Register a New User**
+
 First, register a new user account by sending a POST request to the /register endpoint with the following JSON body:
 
 json
@@ -68,7 +69,7 @@ json
   "password": "1"
 }
 
-2. Login to the System
+2. **Login to the System**
 Next, log in using the same account credentials. Send a POST request to the /login endpoint with the following body:
 
 json
@@ -79,7 +80,7 @@ json
 
 In response, you will receive an access_token. Copy this token for the next step.
 
-3. Authenticate with Bearer Token
+3. **Authenticate with Bearer Token**
 To authenticate future requests, include the access_token in the header of all API requests that require authorization:
 
 In Postman:
@@ -87,14 +88,14 @@ Go to the Authorization tab.
 Select Bearer Token from the dropdown.
 Paste the access_token into the Token field.
 
-4. View All Schemes
+4. **View All Schemes**
 As a system administrator, you can view all schemes by sending a GET request to:
 
 GET /schemes
 
 Ensure the request contains the Bearer token from the previous step in the header.
 
-5. Add New Applicants
+5. **Add New Applicants**
 Before creating an application, you need to save applicant data. Send a POST request to /applicants with an example JSON body like this:
 
 json
@@ -122,7 +123,7 @@ json
   "sex": "female"
 }
 
-6. Create a New Application
+6. **Create a New Application**
 Once an applicant is registered, you can create a new application for them by sending a POST request to /applications with the following JSON body:
 
 json
@@ -132,7 +133,7 @@ json
   "scheme_applied": "Retrenchment Assistance Scheme (families)"
 }
 
-7. Check Eligibility for Schemes
+7. **Check Eligibility for Schemes**
 
 To check an applicant's eligibility for various schemes, use the applicant's id and send a GET request to:
 
@@ -140,7 +141,7 @@ GET /schemes/eligible?applicant={id}
 
 Make sure to replace {id} with the actual applicant's ID.
 
-8. Additional APIs
+8.** Additional APIs**
 Administrators Management: Manage administrator accounts with the following endpoints:
 GET /administrators: View all administrators.
 DELETE /administrators/{id}: Delete an administrator by their ID.
