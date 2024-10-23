@@ -58,7 +58,7 @@ GET /administrators: Retrieve all administrators.
 
 POST /register: Create a new administrator.
 
-DELETE /administrators/{id}: Delete a specific scheme by its ID.
+DELETE /administrators/{id}: Delete a specific administrator by its ID.
 
 3. Applicants:
    
