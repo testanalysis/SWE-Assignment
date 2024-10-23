@@ -19,7 +19,23 @@ To run the Flask application using Docker, follow these steps:
 Clone this repository:
 git clone https://github.com/your-repo/flask-sqlite-docker-app.git
 
-cd flask-sqlite-docker-app
+cd SWE-Assignment-main
+
+Open Docker Desktop Preferences:
+Open Docker Desktop on your Mac.
+Click on the Docker icon in the macOS menu bar.
+Select Preferences (or Settings depending on your version).
+Go to the Resources Section:
+In the Preferences window, select Resources from the left sidebar.
+Then, select File Sharing.
+Add the Path to Your Shared Directories:
+In the File Sharing tab, you’ll see a list of directories that are shared with Docker.
+Click the + button to add a new directory.
+Navigate to /Downloads/SWE-Assignment-main and add it to the shared paths.
+Click Apply & Restart to save the changes and restart Docker.
+Verify Permissions:
+Once Docker restarts, it should have access to the /Downloads/SWE-Assignment-main directory.
+Run your Docker commands again, and the error should be resolved.
 
 Run Docker Compose: Docker Compose will build the image and run the application along with the necessary environment setup.
 bash
