@@ -48,56 +48,6 @@ If Docker cannot access the project directory, you may need to configure Docker 
 8. The Flask app should be listening on http://localhost:5001
 9. Stopping the containers: To stop the Docker containers, press Ctrl + C in the terminal
 
-## Available APIs
-
-Once the app is running, the following APIs will be available at http://localhost:5001/:
-
-1. Login:
-
-POST /login: Authenticate a user and provide access tokens.
-
-2. Administrators:
-
-GET /administrators: Retrieve all administrators.
-
-POST /register: Create a new administrator.
-
-DELETE /administrators/{id}: Delete a specific administrator by its ID.
-
-3. Applicants:
-   
-GET /applicants: Retrieve all applicants.
-
-POST /applicants: Create a new applicant.
-
-4. Household:
-   
-GET /household: Retrieve household information.
-
-5. Schemes:
-   
-GET /schemes: Retrieve all schemes.
-
-GET /schemes/eligible?applicant={id}: Get all schemes an applicant is eligible for.
-
-DELETE /delete_scheme/{id}: Delete a specific scheme by its ID.
-
-POST /add_scheme: Add a new scheme.
-
-6. Scheme Benefits:
- 
-GET /scheme_benefits: Retrieve all scheme benefits.
-
-7. Scheme Criteria:
-   
-GET /scheme_criteria: Retrieve all scheme criteria.
-
-8. Applications:
-
-GET /applications: Retrieve all applications.
-
-POST /applications: Create a new application.
-
 ## System API Usage Guide
 
 This README will guide you through the process of using the system API for registering, logging in, and managing applicants, schemes, and applications. The steps include user registration, login, and making authenticated API calls.
@@ -196,3 +146,54 @@ DELETE /delete_scheme/{id}: Delete a scheme by its ID.
 Applications Management:
 GET /applications: View all applications.
 
+
+
+## Available APIs
+
+Once the app is running, the following APIs will be available at http://localhost:5001/:
+
+1. Login:
+
+POST /login: Authenticate a user and provide access tokens.
+
+2. Administrators:
+
+GET /administrators: Retrieve all administrators.
+
+POST /register: Create a new administrator.
+
+DELETE /administrators/{id}: Delete a specific administrator by its ID.
+
+3. Applicants:
+   
+GET /applicants: Retrieve all applicants.
+
+POST /applicants: Create a new applicant.
+
+4. Household:
+   
+GET /household: Retrieve household information.
+
+5. Schemes:
+   
+GET /schemes: Retrieve all schemes.
+
+GET /schemes/eligible?applicant={id}: Get all schemes an applicant is eligible for.
+
+DELETE /delete_scheme/{id}: Delete a specific scheme by its ID.
+
+POST /add_scheme: Add a new scheme.
+
+6. Scheme Benefits:
+ 
+GET /scheme_benefits: Retrieve all scheme benefits.
+
+7. Scheme Criteria:
+   
+GET /scheme_criteria: Retrieve all scheme criteria.
+
+8. Applications:
+
+GET /applications: Retrieve all applications.
+
+POST /applications: Create a new application.
