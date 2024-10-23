@@ -41,6 +41,7 @@ If Docker cannot access the project directory, you may need to configure Docker 
       - Select "Switch to linux containers" and "Switch"
       - You should now see "File Sharing" Option. 
       - Ensure the appropriate drive (e.g., `C:` or `D:`) is checked.
+      - A video guide here for you if you cant find: https://go.screenpal.com/watch/cFjIljq6db
 5. Click **Apply & Restart**.
 6. Open a terminal, cd to SWE-Assignment-main. You should see app.py & dockerfile etc when you list the directory.
 7. Run "docker-compose up --build".
