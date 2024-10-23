@@ -91,6 +91,7 @@ Paste the access_token into the Token field.
 As a system administrator, you can view all schemes by sending a GET request to:
 
 GET /schemes
+
 Ensure the request contains the Bearer token from the previous step in the header.
 
 5. Add New Applicants
