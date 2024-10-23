@@ -1,19 +1,20 @@
 # SWE-Assignment
 2024-08-13 Coding Assignment
 
-Flask App with SQLite and Docker
-
+**Flask App with SQLite and Docker
+**
 This repository contains a Flask application that uses SQLite as the database and is containerized using Docker. The application provides an API for managing administrators, applicants, households, schemes, applications, and scheme-related information such as benefits and criteria.
 
-Prerequisites
+**Prerequisites**
 
 Before running the application, ensure that you have the following installed:
 
 Docker: You can download and install Docker from here: https://docs.docker.com/engine/install/
 
 Docker Compose: This should come pre-installed with Docker Desktop. If not, follow the Docker Compose installation instructions.
-How to Run the Application
 
+**How to Run the Application
+**
 To run the Flask application using Docker, follow these steps:
 
 Clone this repository:
