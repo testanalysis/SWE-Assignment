@@ -13,8 +13,7 @@ Docker: You can download and install Docker from here: https://docs.docker.com/e
 
 Docker Compose: This should come pre-installed with Docker Desktop. If not, follow the Docker Compose installation instructions.
 
-**How to Run the Application
-**
+**How to Run the Application**
 To run the Flask application using Docker, follow these steps:
 
 Clone this repository:
