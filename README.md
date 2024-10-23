@@ -39,7 +39,7 @@ If Docker cannot access the project directory, you may need to configure Docker 
    - macOS: Click the **`+` button** and select path to the git cloned folder. Click the **`+` button** so that the path is registered for file sharing. 
    - Windows: Ensure the appropriate drive (e.g., `C:` or `D:`) is checked.
 5. Click **Apply & Restart**.
-6. Open a terminal, cd to the folder where the it has been git cloned.
+6. Open a terminal, cd to SWE-Assignment-main. You should see app.py & dockerfile etc when you list the directory.
 7. Run "docker-compose up --build".
 8. The Flask app should be listening on http://localhost:5001
 9. Stopping the containers: To stop the Docker containers, press Ctrl + C in the terminal
