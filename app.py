@@ -57,7 +57,7 @@ def home():
 def get_data():
     return jsonify({'message': 'Here is your data!'})
 
-@app.route('/register', methods=['POST'])
+@app.route('/api/register', methods=['POST'])
 def register():
     data = request.get_json()
  
@@ -81,7 +81,7 @@ def register():
 
     return jsonify({'message': 'User created successfully'}), 201
 
-@app.route('/login', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login():
     data = request.get_json()
     username = data.get('username')
@@ -108,7 +108,7 @@ def login():
     else:
         return jsonify({'message': 'Invalid password'}), 401
 
-@app.route('/administrators', methods=['GET'])
+@app.route('/api/administrators', methods=['GET'])
 @jwt_required()
 def get_administrators():
     conn = get_db_connection()
@@ -118,7 +118,7 @@ def get_administrators():
         return jsonify({"message": "No administrators found."}), 404
     return jsonify([dict(row) for row in administrators]) 
 
-@app.route('/administrators/<int:id>', methods=['DELETE'])
+@app.route('/api/administrators/<int:id>', methods=['DELETE'])
 @jwt_required()
 def delete_administrator(id):
     conn = get_db_connection()
@@ -134,7 +134,7 @@ def delete_administrator(id):
     conn.close()
     return jsonify({'message': 'Administrator deleted successfully.'}), 200
 
-@app.route('/applicants', methods=['GET'])
+@app.route('/api/applicants', methods=['GET'])
 @jwt_required()
 def get_applicants():
     conn = get_db_connection()
@@ -194,7 +194,7 @@ def insert_applicant_and_household(applicant_data):
     return {'message': 'Applicant and household members inserted successfully'}, 200
 
 
-@app.route('/applicants', methods=['POST'])
+@app.route('/api/applicants', methods=['POST'])
 @jwt_required()
 def add_applicant():
     data = request.get_json()
@@ -257,7 +257,7 @@ def add_applicant():
     response, status = insert_applicant_and_household(data)
     return jsonify(response), status
 
-@app.route('/schemes', methods=['GET'])
+@app.route('/api/schemes', methods=['GET'])
 @jwt_required()
 def get_schemes():
     current_user = get_jwt_identity()  # Get the user info from the JWT token
@@ -366,7 +366,7 @@ def insert_scheme_data(data):
         conn.close()
 
 
-@app.route('/add_scheme', methods=['POST'])
+@app.route('/api/add_scheme', methods=['POST'])
 @jwt_required()
 def add_schemes():
     data = request.get_json()
@@ -377,7 +377,7 @@ def add_schemes():
     result, status_code = insert_scheme_data(data)
     return jsonify(result), status_code
 
-@app.route('/delete_scheme/<int:scheme_id>', methods=['DELETE'])
+@app.route('/api/delete_scheme/<int:scheme_id>', methods=['DELETE'])
 @jwt_required()
 def delete_scheme(scheme_id):
     conn = get_db_connection()
@@ -397,7 +397,7 @@ def delete_scheme(scheme_id):
 
     return jsonify({"message": "Scheme and related data deleted successfully."}), 200
 
-@app.route('/scheme_benefits', methods=['GET'])
+@app.route('/api/scheme_benefits', methods=['GET'])
 @jwt_required()
 def get_schemes_benefit():
     conn = get_db_connection()
@@ -405,7 +405,7 @@ def get_schemes_benefit():
     conn.close()
     return jsonify([dict(row) for row in benefits]) 
 
-@app.route('/scheme_criteria', methods=['GET'])
+@app.route('/api/scheme_criteria', methods=['GET'])
 @jwt_required()
 def get_schemes_criteria():
     conn = get_db_connection()
@@ -502,7 +502,7 @@ def eligibility(applicant_id):
 
     return {'result': True}, 200
 
-@app.route('/schemes/eligible', methods=['GET'])
+@app.route('/api/schemes/eligible', methods=['GET'])
 @jwt_required()
 def get_specific_scheme():
     current_user = get_jwt_identity()  # Get the user info from the JWT token
@@ -521,7 +521,7 @@ def get_specific_scheme():
         return jsonify(result), status_code
 
 
-@app.route('/applications', methods=['GET'])
+@app.route('/api/applications', methods=['GET'])
 @jwt_required()
 def get_applications():
     conn = get_db_connection()
@@ -572,7 +572,7 @@ def insert_application(application_data):
 
     return {'message': 'Application inserted successfully'}, 200
 
-@app.route('/applications', methods=['POST'])
+@app.route('/api/applications', methods=['POST'])
 @jwt_required()
 def add_applications():
     current_user = get_jwt_identity()  # Get the user info from the JWT token
@@ -612,7 +612,7 @@ def add_applications():
 
     return insert_application(data)
 
-@app.route('/household', methods=['GET'])
+@app.route('/api/household', methods=['GET'])
 @jwt_required()
 def get_household():
     conn = get_db_connection()
