@@ -68,7 +68,7 @@ Steps
 
 1. **Register a New User**
 
-First, register a new user account by sending a POST request to the /register endpoint with the following JSON body:
+First, register a new user account by sending a POST request to the /api/register endpoint with the following JSON body:
 
 json
 {
@@ -78,7 +78,7 @@ json
 
 2. **Login to the System**
    
-Next, log in using the same account credentials. Send a POST request to the /login endpoint with the following body:
+Next, log in using the same account credentials. Send a POST request to the /api/login endpoint with the following body:
 
 json
 {
@@ -101,13 +101,13 @@ Paste the access_token into the Token field.
    
 As a system administrator, you can view all schemes by sending a GET request to:
 
-GET /schemes
+GET /api/schemes
 
 Ensure the request contains the Bearer token from the previous step in the header.
 
 5. **Add New Applicants**
    
-Before creating an application, you need to save applicant data. Send a POST request to /applicants with an example JSON body like this:
+Before creating an application, you need to save applicant data. Send a POST request to /api/applicants with an example JSON body like this:
 
 json
 {
@@ -136,7 +136,7 @@ json
 
 6. **Create a New Application**
    
-Once an applicant is registered, you can create a new application for them by sending a POST request to /applications with the following JSON body:
+Once an applicant is registered, you can create a new application for them by sending a POST request to /api/applications with the following JSON body:
 
 json
 {
@@ -149,7 +149,7 @@ json
 
 To check an applicant's eligibility for various schemes, use the applicant's id and send a GET request to:
 
-GET /schemes/eligible?applicant={id}
+GET /api/schemes/eligible?applicant={id}
 
 Make sure to replace {id} with the actual applicant's ID.
 
@@ -157,16 +157,16 @@ Make sure to replace {id} with the actual applicant's ID.
 
 Administrators Management: Manage administrator accounts with the following endpoints:
 
-GET /administrators: View all administrators.
-DELETE /administrators/{id}: Delete an administrator by their ID.
+GET /api/administrators: View all administrators.
+DELETE /api/administrators/{id}: Delete an administrator by their ID.
 
 Scheme Management:
 
-POST /add_scheme: Add a new scheme.
-DELETE /delete_scheme/{id}: Delete a scheme by its ID.
+POST /api/add_scheme: Add a new scheme.
+DELETE /api/delete_scheme/{id}: Delete a scheme by its ID.
 
 Applications Management:
-GET /applications: View all applications.
+GET /api/applications: View all applications.
 
 
 
@@ -176,46 +176,46 @@ Once the app is running, the following APIs will be available at http://localhos
 
 1. Login:
 
-POST /login: Authenticate a user and provide access tokens.
+POST /api/login: Authenticate a user and provide access tokens.
 
 2. Administrators:
 
-GET /administrators: Retrieve all administrators.
+GET /api/administrators: Retrieve all administrators.
 
-POST /register: Create a new administrator.
+POST /api/register: Create a new administrator.
 
-DELETE /administrators/{id}: Delete a specific administrator by its ID.
+DELETE /api/administrators/{id}: Delete a specific administrator by its ID.
 
 3. Applicants:
    
-GET /applicants: Retrieve all applicants.
+GET /api/applicants: Retrieve all applicants.
 
-POST /applicants: Create a new applicant.
+POST /api/applicants: Create a new applicant.
 
 4. Household:
    
-GET /household: Retrieve household information.
+GET /api/household: Retrieve household information.
 
 5. Schemes:
    
-GET /schemes: Retrieve all schemes.
+GET /api/schemes: Retrieve all schemes.
 
-GET /schemes/eligible?applicant={id}: Get all schemes an applicant is eligible for.
+GET /api/schemes/eligible?applicant={id}: Get all schemes an applicant is eligible for.
 
-DELETE /delete_scheme/{id}: Delete a specific scheme by its ID.
+DELETE /api/delete_scheme/{id}: Delete a specific scheme by its ID.
 
-POST /add_scheme: Add a new scheme.
+POST /api/add_scheme: Add a new scheme.
 
 6. Scheme Benefits:
  
-GET /scheme_benefits: Retrieve all scheme benefits.
+GET /api/scheme_benefits: Retrieve all scheme benefits.
 
 7. Scheme Criteria:
    
-GET /scheme_criteria: Retrieve all scheme criteria.
+GET /api/scheme_criteria: Retrieve all scheme criteria.
 
 8. Applications:
 
-GET /applications: Retrieve all applications.
+GET /api/applications: Retrieve all applications.
 
-POST /applications: Create a new application.
+POST /api/applications: Create a new application.
