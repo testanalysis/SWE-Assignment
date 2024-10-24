@@ -158,14 +158,17 @@ Make sure to replace {id} with the actual applicant's ID.
 Administrators Management: Manage administrator accounts with the following endpoints:
 
 GET /api/administrators: View all administrators.
+
 DELETE /api/administrators/{id}: Delete an administrator by their ID.
 
 Scheme Management:
 
 POST /api/add_scheme: Add a new scheme.
+
 DELETE /api/delete_scheme/{id}: Delete a scheme by its ID.
 
 Applications Management:
+
 GET /api/applications: View all applications.
 
 
